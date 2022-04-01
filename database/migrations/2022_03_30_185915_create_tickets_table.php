@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('cinema_id')->constrained('cinemas');
             $table->foreignId('movie_id')->constrained('movies');
             $table->integer('number');
             $table->timestampsTz();
