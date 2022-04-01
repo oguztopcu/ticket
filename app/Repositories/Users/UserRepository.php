@@ -13,7 +13,13 @@ class UserRepository
         $this->model = $user;
     }
 
-    public function create(array $data = [])
+    /**
+     * Yeni kullanıcı oluşturur.
+     *
+     * @param array $data
+     * @return mixed
+     */
+    public function create(array $data = []): User
     {
         return $this->model->create($data);
     }
