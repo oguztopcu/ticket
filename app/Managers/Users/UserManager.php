@@ -2,6 +2,7 @@
 
 namespace App\Managers\Users;
 
+use App\Models\User;
 use App\Repositories\Users\UserRepository;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,13 @@ class UserManager
         $this->repository = $userRepository;
     }
 
-    public function create(Request $request)
+    /**
+     * Kullanıcı oluşturur.
+     *
+     * @param Request $request
+     * @return User
+     */
+    public function create(Request $request): User
     {
         return $this->repository->create([
             'name' => $request->input('name'),
